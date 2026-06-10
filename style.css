@@ -1,0 +1,461 @@
+/* ==========================================================================
+   PASSO 1: VARIÁVEIS CSS E IDENTIDADE VISUAL ÚNICA
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Institucional Estrita */
+    --bg-body: #A4D6C7;
+    --bg-header: #D4D4E4;
+    --color-text-header: #000000;
+    --color-dark-highlight: #000000;
+    --color-text-light: #FFFFFF;
+    --color-border: red;
+    --color-link: #002244; /* Azul Escuro */
+    
+    /* Cores Interativas e de Estado */
+    --btn-primary: #000000;
+    --btn-hover: #F9E6B5;
+    --btn-text: #000000;
+    
+    /* Tipografia Fluida (clamp) */
+    --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fs-h1: clamp(1.25rem, 4vw, 2.5rem);
+    --fs-h2: clamp(1.5rem, 3.5vw, 2.2rem);
+    --fs-body: clamp(1rem, 1vw + 0.5rem, 1.2rem);
+    
+    /* Espaçamentos e Layout */
+    --spacing-xs: 0.5rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --border-style: solid;
+    --border-width: 2px;
+    --radius-soft: 12px;
+    
+    /* Sombras e Transições */
+    --shadow-smooth: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset Geral e Acessibilidade de Foco */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: 4px;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: var(--font-family-base);
+    color: #111111;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   PASSO 4: SISTEMA DE ACESSIBILIDADE FLUTUANTE
+   ========================================================================== */
+.accessibility-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--color-dark-highlight);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-soft);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: var(--shadow-smooth);
+}
+
+.acc-btn {
+    background: var(--color-text-light);
+    color: var(--color-dark-highlight);
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition-fast);
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.acc-btn:hover {
+    background: var(--btn-hover);
+}
+
+/* Alto Contraste Classe Injetada por JS */
+body.high-contrast {
+    --bg-body: #000000 !important;
+    --bg-header: #000000 !important;
+    --color-text-header: #FFFFFF !important;
+    --color-dark-highlight: #FFFFFF !important;
+    --color-text-light: #000000 !important;
+    --color-link: #FFFF00 !important;
+    --btn-primary: #FFFFFF !important;
+    --btn-hover: #FFFF00 !important;
+    --btn-text: #000000 !important;
+    --color-border: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+body.high-contrast .narrative-section,
+body.high-contrast .practices-section,
+body.high-contrast .form-wrapper,
+body.high-contrast .comments-wrapper {
+    background: #000000 !important;
+    border: 2px solid #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   ESTRUTURA DE COMPONENTES (HTML5 SEMÂNTICO)
+   ========================================================================== */
+
+/* 1. Header */
+.main-header {
+    background-color: var(--bg-header);
+    border-bottom: var(--border-width) var(--border-style) var(--color-border);
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: center;
+}
+
+.header-container h1 {
+    color: var(--color-text-header);
+    font-size: var(--fs-h1);
+    font-weight: 800;
+}
+
+/* 2. Hero Section */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Fundo elegante reserva */
+    color: var(--color-text-light);
+    padding: clamp(4rem, 10vw, 8rem) var(--spacing-md);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-dynamic-title {
+    font-size: calc(var(--fs-h2) * 1.3);
+    margin-bottom: var(--spacing-md);
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: var(--fs-body);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--btn-primary);
+    color: var(--color-text-light);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--radius-soft);
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--btn-hover);
+    color: var(--btn-text);
+    transform: translateY(-2px);
+}
+
+/* Layout Principal */
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* 3. Seção de Narrativa */
+.narrative-section {
+    background: var(--color-text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-soft);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    box-shadow: var(--shadow-smooth);
+}
+
+.narrative-section h2 {
+    font-size: var(--fs-h2);
+    margin-bottom: var(--spacing-md);
+}
+
+.narrative-section p {
+    font-size: var(--fs-body);
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+/* 5. Espaços Reservados Para Imagens */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.imagem {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-smooth);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    transition: var(--transition-fast);
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-fast);
+    aspect-ratio: 16 / 10;
+}
+
+.imagem:hover {
+    transform: translateY(-5px);
+}
+
+.imagem:hover img {
+    transform: scale(1.04);
+}
+
+/* 4. Cards e Conteúdo Expansível (Accordion) */
+.practices-section {
+    background: var(--color-text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-soft);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    box-shadow: var(--shadow-smooth);
+}
+
+.practices-section h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.accordion-item {
+    border: var(--border-width) var(--border-style) var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    background: var(--color-dark-highlight);
+    color: var(--color-text-light);
+    padding: var(--spacing-md);
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-fast);
+}
+
+.accordion-header:hover {
+    background: var(--btn-hover);
+    color: var(--btn-text);
+}
+
+.accordion-panel {
+    background: #F8F9FA;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-panel p {
+    padding: var(--spacing-md);
+}
+
+/* 6. Componentes Interativos Lado a Lado */
+.interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.form-wrapper, .comments-wrapper {
+    background: var(--color-text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-soft);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    box-shadow: var(--shadow-smooth);
+}
+
+.form-wrapper h3, .comments-wrapper h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.modern-form, .comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border: var(--border-width) var(--border-style) var(--color-border);
+    border-radius: 6px;
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    background-color: #FAFAFA;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-xs);
+}
+
+.submit-btn, .comment-submit-btn {
+    background-color: var(--btn-primary);
+    color: var(--color-text-light);
+    border: var(--border-width) var(--border-style) var(--color-border);
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.submit-btn:hover, .comment-submit-btn:hover {
+    background-color: var(--btn-hover);
+    color: var(--btn-text);
+}
+
+/* Feed de comentários dinamizados */
+.comments-list {
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.comment-card {
+    background: #F1F3F5;
+    padding: 12px;
+    border-left: 4px solid var(--color-dark-highlight);
+    border-radius: 4px;
+}
+
+.comment-card p {
+    font-size: 0.95rem;
+}
+
+.comment-card small {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+}
+
+/* 7. Rodapé */
+.main-footer {
+    background-color: var(--color-dark-highlight);
+    color: var(--color-text-light);
+    border-top: var(--border-width) var(--border-style) var(--color-border);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.footer-tagline {
+    font-weight: bold;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-references {
+    border-top: 1px dashed var(--color-border);
+    padding-top: var(--spacing-md);
+}
+
+.ref-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+}
+
+.ref-list a {
+    color: var(--color-text-light);
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.ref-list a:hover {
+    color: var(--btn-hover);
+}
+
+/* ==========================================================================
+   PASSO 5: RESPONSIVIDADE EXTREMA E BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .interactive-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .accessibility-menu {
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+        flex-direction: row;
+    }
+}

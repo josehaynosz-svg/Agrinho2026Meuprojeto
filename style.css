@@ -12,9 +12,9 @@
     --color-link: #002244; /* Azul Escuro */
     
     /* Cores Interativas e de Estado */
-    --btn-primary: #000000;
+    --btn-primary: #ff0000;
     --btn-hover: #F9E6B5;
-    --btn-text: #ff0000;
+    --btn-text: #000000;
     
     /* Tipografia Fluida (clamp) */
     --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

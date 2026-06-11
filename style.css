@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     /* Paleta de Cores Institucional Estrita */
-    --bg-body: #A4D6C7;
+    --bg-body: rgb(154, 177, 122);
     --bg-header: #D4D4E4;
     --color-text-header: #000000;
     --color-dark-highlight: #000000;

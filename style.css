@@ -8,7 +8,7 @@
     --color-text-header: #000000;
     --color-dark-highlight: #000000;
     --color-text-light: #FFFFFF;
-    --color-border: red;
+    --color-border: rgb(0, 0, 0);
     --color-link: #002244; /* Azul Escuro */
     
     /* Cores Interativas e de Estado */

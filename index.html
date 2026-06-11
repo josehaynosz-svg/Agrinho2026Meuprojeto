@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concurso Agrinho 2026 - Agro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
 
@@ -25,8 +25,8 @@
     <section class="hero-section" aria-labelledby="heroTitle">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2 id="heroTitle" class="hero-dynamic-title">Preservação de Nascentes e o Futuro da Terra</h2>
-            <p class="hero-subtitle">Descubra como a produção leiteira sustentável em Pitanga concilia alta produtividade com o respeito absoluto aos recursos hídricos.</p>
+            <h2 id="heroTitle" class="hero-dynamic-title">Preservando as Nascentes e o nosso Futuro</h2>
+            <p class="hero-subtitle">Equilíbrio entre sustentabilidade e produção.</p>
             <a href="#narrativa" class="cta-button">Conheça Nossa História</a>
         </div>
     </section>
@@ -34,25 +34,43 @@
     <main class="main-content" id="mainContent">
         
         <section id="narrativa" class="narrative-section" aria-labelledby="narrativeTitle">
-            <h2 id="narrativeTitle">Nossa Jornada pela Sustentabilidade</h2>
+            <h2 id="principalTitle">Nascentes Protegidas, Futuro Garantido</h2>
             
-            <p>Viver e produzir no campo nos traz a responsabilidade diária de proteger as riquezas naturais que sustentam nossa atividade. Nas propriedades rurais de Pitanga, compreendemos que cada gota de água que brota de uma nascente é o sangue que corre nas veias da nossa produção leiteira. Ao longo dos anos, implementamos o cercamento sistemático das áreas de preservação permanente (APPs), impedindo o acesso direto do gado e garantindo a regeneração da mata ciliar ao redor dos olhos d'água.</p>
+            <p>O agronegócio brasileiro demonstra, na prática, que a produção de alimentos e a conservação ambiental caminham lado a lado, impulsionadas por uma das legislações mais rigorosas do mundo e pelo compromisso dos produtores. No dia a dia do campo, o ponto de partida para essa sustentabilidade está na gestão consciente do solo e do território. Antes de qualquer ação prática, o planejamento estratégico dentro das propriedades rurais desempenha um papel fundamental para garantir a segurança dos recursos naturais, estabelecendo as bases para que a atividade agrícola prospere em total harmonia com o ecossistema.</p>
             
-            <p>O agronegócio é o verdadeiro motor da economia paranaense, sendo essencial para o desenvolvimento local e regional. Ele movimenta o comércio, gera milhares de empregos no campo e na cidade, e atrai investimentos em infraestrutura. Graças à agroindústria e à agricultura familiar, diversas cidades do interior prosperam com autonomia financeira. O agronegócio impulsiona a inovação tecnológica, melhora a renda dos produtores e garante a segurança alimentar. No cenário regional, essa potência produtiva transforma o estado em um gigante exportador, fortalecendo a balança comercial e elevando a qualidade de vida da população paranaense de forma sustentável.</p>
+            <p>A partir desse planejamento, a atenção se volta para os cuidados técnicos e ecológicos que sustentam a vida na fazenda. No Paraná, esse modelo de desenvolvimento recebe forte incentivo do governador Ratinho Junior, por meio de programas que unem inovação econômica e responsabilidade ecológica. O foco dessas iniciativas está em compreender as dinâmicas da natureza e aplicar métodos que fortaleçam os ciclos naturais, criando barreiras de proteção que evitam a degradação e garantem a renovação dos recursos essenciais para a produtividade e para o abastecimento regional.</p>
             
-            <p>Essa pujança econômica só se mantém viva se cuidarmos da base: o meio ambiente. Substituímos antigos sistemas de irrigação por tecnologias de precisão e direcionamos o manejo do rebanho para pastagens rotacionadas longe das fontes hídricas, utilizando bebedouros ecológicos alimentados por gravidade. Preservar as nascentes não é apenas cumprir uma lei, é proteger o amanhã da nossa família, do nosso estado e assegurar que a bacia hidrográfica continue rica e limpa para as próximas gerações.</p>
-
+            <p>Como resultado dessa união de esforços entre o governo e o homem do campo, o cenário rural se transforma. O produtor assume o protagonismo ao adotar práticas que conciliam produtividade e equilíbrio ecológico, transformando a teoria em realidade visível no campo. Os frutos desse trabalho trazem segurança e sustentabilidade para as famílias, animais e lavouras, consolidando um modelo de negócio forte, resiliente e preparado para as futuras gerações, conforme ilustrado nos exemplos visuais a seguir.</p>
+            
             <div class="image-gallery">
                 <div class="imagem"> 
-                    <img src="https://olajornal.com.br/wp-content/uploads/2017/08/nascente-e1502710364561.jpg" alt="[PROMPT_ESTUDANTE_ALT1: Nascente de água protegida por cerca de isolamento e cercada por vegetação nativa em regeneração na área rural]"> 
+                    <img src="imagens/foto1.jpg" alt="Nascente protegida" onclick="document.getElementById('modalFoto1').showModal()" style="cursor: pointer;"> 
+                    
+                    <dialog id="modalFoto1" onclick="if(event.target === this) this.close()">
+                        <img src="imagens/foto1.jpg" alt="Nascente protegida Ampliada">
+                        <p style="text-align: center; margin: 5px 0 0 0; color: #666; font-size: 14px;">(Clique fora para fechar)</p>
+                    </dialog>
                 </div>
+
                 <div class="imagem"> 
-                    <img src="Foto2.png" alt="[PROMPT_ESTUDANTE_ALT2: Vacas leiteiras pastando em sistema rotacionado com bebedouro artificial ecológico ao fundo]"> 
+                    <img src="imagens/foto2.jpg" alt="Vacas leiteiras" onclick="document.getElementById('modalFoto2').showModal()" style="cursor: pointer;"> 
+                    
+                    <dialog id="modalFoto2" onclick="if(event.target === this) this.close()">
+                        <img src="imagens/foto2.jpg" alt="Vacas leiteiras Ampliada">
+                        <p style="text-align: center; margin: 5px 0 0 0; color: #666; font-size: 14px;">(Clique fora para fechar)</p>
+                    </dialog>
                 </div>
+
                 <div class="imagem"> 
-                    <img src="Foto3.png" alt="[PROMPT_ESTUDANTE_ALT3: Produtor rural avaliando a qualidade e a fluidez da água limpa de uma mina d'água recuperada]"> 
+                    <img src="imagens/foto3.jpg" alt="Produtor rural" onclick="document.getElementById('modalFoto3').showModal()" style="pointer-events: auto; cursor: pointer;"> 
+                    
+                    <dialog id="modalFoto3" onclick="if(event.target === this) this.close()">
+                        <img src="imagens/foto3.jpg" alt="Produtor rural Ampliada">
+                        <p style="text-align: center; margin: 5px 0 0 0; color: #666; font-size: 14px;">(Clique fora para fechar)</p>
+                    </dialog>
                 </div>
             </div>
+            
         </section>
 
         <section class="practices-section" aria-labelledby="practicesTitle">

@@ -43,17 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFontSizeRem = 1.0;
 
     // 1. Controle de tamanho de Fonte
+    // Aumentar e Diminuir Fonte - Apontando para o documento inteiro
     document.getElementById('btnIncreaseText').addEventListener('click', () => {
         if (currentFontSizeRem < 1.5) {
             currentFontSizeRem += 0.1;
-            mainContent.style.setProperty('--fs-body', `${currentFontSizeRem}rem`);
+            // Altera o tamanho base da página inteira
+            document.documentElement.style.fontSize = `${currentFontSizeRem}rem`;
         }
     });
 
     document.getElementById('btnDecreaseText').addEventListener('click', () => {
         if (currentFontSizeRem > 0.8) {
             currentFontSizeRem -= 0.1;
-            mainContent.style.setProperty('--fs-body', `${currentFontSizeRem}rem`);
+            // Altera o tamanho base da página inteira
+            document.documentElement.style.fontSize = `${currentFontSizeRem}rem`;
         }
     });
 

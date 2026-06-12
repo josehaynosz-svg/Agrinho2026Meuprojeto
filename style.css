@@ -496,51 +496,63 @@ dialog img {
 
 
 /* ==========================================================================
-   2. Hero Section (Animada - Tema Nascentes)
+   2. Hero Section: Layout Dividido com Vídeo e Gradiente Animado
    ========================================================================== */
 
-/* Animação 1: O movimento das águas da nascente */
 @keyframes fluxoDaNascente {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.hero-section {
-    position: relative;
-    /* Gradiente expandido com tons profundos e claros de água */
-    background: linear-gradient(-45deg, #002244, #1e3c72, #0077b6, #48cae4);
-    background-size: 400% 400%;
-    animation: fluxoDaNascente 12s ease infinite;
-    color: var(--color-text-light);
-    padding: clamp(4rem, 10vw, 8rem) var(--spacing-md);
-    text-align: center;
-    overflow: hidden;
-}
-
-/* Camada escura semitransparente para garantir a leitura do texto */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade se precisar de mais ou menos contraste */
-    z-index: 1;
-}
-
-/* Animação 2: Efeito de boiar na água para o conteúdo */
 @keyframes flutuacao {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #002244;
+}
+
+/* O vídeo fixo na esquerda */
+.hero-media-lateral {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+/* O Overlay agora contém a animação de cores (transição de tons) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, rgba(0, 34, 68, 0.6), rgba(30, 60, 114, 0.6), rgba(0, 119, 182, 0.6), rgba(72, 202, 228, 0.6));
+    background-size: 400% 400%;
+    animation: fluxoDaNascente 15s ease infinite;
+    z-index: 1;
+}
+
 .hero-content {
     position: relative;
-    z-index: 2; /* Garante que o texto fique acima do overlay */
-    max-width: 800px;
-    margin: 0 auto;
+    z-index: 2;
+    max-width: 45%;
+    margin-right: 5%;
     animation: flutuacao 6s ease-in-out infinite;
 }
 
@@ -548,7 +560,8 @@ dialog img {
     font-size: calc(var(--fs-h2) * 1.3);
     margin-bottom: var(--spacing-md);
     font-weight: 800;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Sombra extra para leitura impecável */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    color: var(--color-text-light);
 }
 
 .hero-subtitle {
@@ -556,6 +569,7 @@ dialog img {
     margin-bottom: var(--spacing-lg);
     opacity: 0.95;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    color: var(--color-text-light);
 }
 
 .cta-button {
@@ -576,6 +590,13 @@ dialog img {
 .cta-button:hover {
     background-color: var(--btn-hover);
     color: var(--btn-text);
-    transform: translateY(-2px) scale(1.02); /* Pequeno pulo ao passar o mouse */
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .hero-section { justify-content: center; text-align: center; }
+    .hero-media-lateral { width: 100%; -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%); mask-image: linear-gradient(to bottom, black 30%, transparent 100%); }
+    .hero-content { max-width: 90%; margin: 40% auto 0 auto; }
 }

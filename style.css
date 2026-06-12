@@ -377,12 +377,13 @@ dialog img {
 }
 
 .form-group input, .form-group textarea {
-    padding: 5%;
+    padding: 10px;
     border: var(--border-width) var(--border-style) var(--color-border);
     border-radius: 6px;
     font-family: var(--font-family-base);
-    font-size: 1rem;
+    font-size: var(--fs-body);
     background-color: #FAFAFA;
+    box-sizing: border-box;
 }
 
 .form-row {

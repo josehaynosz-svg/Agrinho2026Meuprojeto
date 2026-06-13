@@ -460,9 +460,6 @@ dialog img {
     padding-top: var(--spacing-md);
 }
 
-.main-footer {
-    animation: flutuacao 6s ease-in-out infinite;
-}
 
 .ref-list {
     list-style: none;
@@ -609,4 +606,9 @@ dialog img {
     .hero-section { justify-content: center; text-align: center; }
     .hero-media-lateral { width: 100%; -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%); mask-image: linear-gradient(to bottom, black 30%, transparent 100%); }
     .hero-content { max-width: 90%; margin: 40% auto 0 auto; }
+}
+
+
+.main-footer {
+    animation: flutuacao 6s ease-in-out infinite;
 }

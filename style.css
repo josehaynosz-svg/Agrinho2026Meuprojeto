@@ -460,6 +460,10 @@ dialog img {
     padding-top: var(--spacing-md);
 }
 
+.main-footer {
+    animation: flutuacao 6s ease-in-out infinite;
+}
+
 .ref-list {
     list-style: none;
     display: flex;

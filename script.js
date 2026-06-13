@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Controle de tamanho de Fonte
     // Aumentar e Diminuir Fonte - Apontando para o documento inteiro
     document.getElementById('btnIncreaseText').addEventListener('click', () => {
-        if (currentFontSizeRem < 1.5) {
+        if (currentFontSizeRem < 2) {
             currentFontSizeRem += 0.1;
             // Altera o tamanho base da página inteira
             document.documentElement.style.fontSize = `${currentFontSizeRem}rem`;

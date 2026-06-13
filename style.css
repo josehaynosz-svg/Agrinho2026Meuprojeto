@@ -348,6 +348,7 @@ dialog img {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: var(--spacing-lg);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .form-wrapper, .comments-wrapper {

@@ -390,7 +390,8 @@ dialog img {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: var(--spacing-xs);
-}
+    align-items: end;
+} 
 
 .submit-btn, .comment-submit-btn {
     background-color: var(--btn-primary);

@@ -610,5 +610,14 @@ dialog img {
 
 
 .main-footer {
-    animation: flutuacao 6s ease-in-out infinite;
+    /* Mantenha o que já tem, mas adicione/ajuste estas 3 linhas: */
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #002244, #1e3c72);
+    background-size: 400% 400%;
+    animation: fluxoDaNascente 15s ease infinite;
+    
+    /* Mantenha suas outras propriedades */
+    color: var(--color-text-light);
+    border-top: var(--border-width) var(--border-style) var(--color-border);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
 }

@@ -344,8 +344,10 @@ dialog img {
 /* 6. Componentes Interativos Lado a Lado */
 .interactive-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    /* Alteramos de 450px para 300px ou um valor menor para telas móveis */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: var(--spacing-lg);
+    width: 100%;
 }
 
 .form-wrapper, .comments-wrapper {

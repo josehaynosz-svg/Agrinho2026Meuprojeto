@@ -3,17 +3,17 @@
    ========================================================================== */
 :root {
     /* Paleta de Cores Institucional Estrita */
-    --bg-body: #A4D6C7;
-    --bg-header: #D4D4E4;
+    --bg-body: rgb(154, 177, 122);
+    --bg-header: rgb(251, 232, 206);
     --color-text-header: #000000;
     --color-dark-highlight: #000000;
     --color-text-light: #FFFFFF;
-    --color-border: red;
+    --color-border: rgb(0, 0, 0);
     --color-link: #002244; /* Azul Escuro */
     
     /* Cores Interativas e de Estado */
     --btn-primary: #000000;
-    --btn-hover: #F9E6B5;
+    --btn-hover: #eeb448e8;
     --btn-text: #000000;
     
     /* Tipografia Fluida (clamp) */
@@ -49,7 +49,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 body {
@@ -344,8 +344,10 @@ dialog img {
 /* 6. Componentes Interativos Lado a Lado */
 .interactive-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    /* O "min(100%, 450px)" impede que o card seja maior que a tela */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
     gap: var(--spacing-lg);
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -378,19 +380,22 @@ dialog img {
 }
 
 .form-group input, .form-group textarea {
-    padding: 5%;
+    padding: 10px;
     border: var(--border-width) var(--border-style) var(--color-border);
     border-radius: 6px;
     font-family: var(--font-family-base);
-    font-size: 1rem;
+    font-size: var(--fs-body);
     background-color: #FAFAFA;
+    box-sizing: border-box;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: var(--spacing-xs);
-}
+    width: 100%;       /* Mantém contido no pai */
+    min-width: 0;
+} 
 
 .submit-btn, .comment-submit-btn {
     background-color: var(--btn-primary);
@@ -495,39 +500,6 @@ dialog img {
 }
 
 
-/* ==========================================================================
-   2. Hero Section (Animada - Tema Nascentes)
-   ========================================================================== */
-
-/* Animação 1: O movimento das águas da nascente */
-@keyframes fluxoDaNascente {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.hero-section {
-    position: relative;
-    /* Gradiente expandido com tons profundos e claros de água */
-    background: linear-gradient(-45deg, #002244, #1e3c72, #0077b6, #48cae4);
-    background-size: 400% 400%;
-    animation: fluxoDaNascente 12s ease infinite;
-    color: var(--color-text-light);
-    padding: clamp(4rem, 10vw, 8rem) var(--spacing-md);
-    text-align: center;
-    overflow: hidden;
-}
-
-/* Camada escura semitransparente para garantir a leitura do texto */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade se precisar de mais ou menos contraste */
-    z-index: 1;
-}
 
 /* ==========================================================================
    2. Hero Section: Layout Dividido com Vídeo e Gradiente Animado

@@ -541,7 +541,7 @@ dialog img {
     mask-image: linear-gradient(to right, black 70%, transparent 100%);
 }
 
-/* O Overlay agora contém a animação de cores (transição de tons) */
+/* O Overlay agora contém a animação de cores(transição de tons) */
 .hero-overlay {
     position: absolute;
     top: 0;
